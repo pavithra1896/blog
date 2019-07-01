@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cake</title>
+	<style type="text/css">
+		img{
+			 display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+		}
+		body{
+			font-size: 18px;
+		}
+		button{
+	width: 100px;
+    height: 40px;
+    color: grey; 
+		}
+	</style>
+</head>
+	<body onload="checkEdit1()">
+<div id="cake" style="padding: 0px 25px 25px 25px">
+	<h1>Blueberry Cake</h1>
+<p>Fresh Blueberry Cake with Cream Cheese Icing Perfection</p>
+<b>What’s the one thing that sets this Blueberry cake apart from others?</b>
+<p> The rich taste of the cream cheese that’s mixed right into the batter. It’s the perfect pairing with the fresh blueberries. </p>
+
+<b>Why This Recipe Works:</b>
+<p>The cream cheese baked into the cake not only adds moisture but flavor too.
+The thick batter helps keep the blueberries from sinking to the bottom of the cake.</p>
+<p>The cream cheese icing is the perfect way to finish off this luscious cake.</p> 
+
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/07/frozen-blueberries.jpg" width="50%" >
+<p>Making Blueberry Cake with Frozen Blueberries: 
+
+<p>To prevent your frozen blueberries bleeding into the batter,  don’t leave them out to defrost, instead rinse the frozen blueberries to defrost them.</p>
+<p>Rinse the blueberries in cold water several times until they are defrosted, and the water is relatively clear when you drain them.</p> <p> As they defrost, the water may start out dark blue, but will gradually lighten to a watery reddish blue. </p>
+<p>Dry the blueberries well with paper towels by spreading them out evenly on them and pressing another layer on top.</p> <p> Press gently and leave until you need them. 
+<p>Before adding the defrosted blueberries to the batter, coat them on a tablespoon of flour (be sure to stir gently when folding them into the batter).</p>
+<p>Start with softening the butter and cream cheese together in the microwave until very soft, but not completely melted.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2018/04/Soft-Cream-Cheese-and-butter-1.jpg" width="50%">
+<p>Next, mix all the wet ingredients and sugar with the cream cheese mixture until combined.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2018/04/Best-Blueberry-Cake.2.jpg" width="50%">
+<p>Mix in the remaining dry ingredients by hand.Fold in the blueberries.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2018/04/Best-Blueberry-Cake.04-e1534788631650.jpg" width="50%">
+<p>Add the batter evenly to the pan.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2018/04/Best-Blueberry-Cake.05.jpg" width="50%">
+<p>Bake for 50-60 minutes, until a cake tester comes out clean, and the top is nicely browned.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/07/blueberry-cake-11-e1511885497375.jpg" width="50%">
+<p>To make the cream cheese icing, start with melted butter and softened cream cheese.Add powdered sugar, vanilla and some milk (I used 3 tablespoons because I like my icing a little thick).</p>
+
+<img src="https://www.errenskitchen.com/wp-content/uploads/2018/04/Best-Blueberry-Cake.011.jpg" width="50%">
+<p>Blend until smooth.Drizzle the icing over the cake and top with fresh blueberries.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/05/blueberry-cake-1-e1511359193835.jpg" width="50%">
+
+</div>
+</br>
+</br>
+</br>
+
+<button onclick="edit()" style="margin-left:25px" >Edit</button>
+<button onclick="cancelEdit()" style="margin-left: 25px">Cancel</button>
+<button onclick="saveEdit()" style="margin-left:400px">Save</button>
+
+<script type="text/javascript">
+
+	function edit(){
+	document.getElementById("cake").contentEditable = "true";}
+
+   function saveEdit(){
+   	var edit2 = document.getElementById("cake");
+   	var userVersion2 = edit2.innerHTML;
+   	localStorage.userEdit2=userVersion2;
+   	
+}
+
+   function checkEdits(){
+   	if(localStorage.userEdit2!=null)
+   		document.getElementById("cake").innerHTML=localStorage.userEdit2;
+   		
+}
+   function cancelEdit(){
+   	document.getElementById("cake").contentEditable = "false";
+   }
+
+</script>
+</body>
+</html>
+</body>
+</html>

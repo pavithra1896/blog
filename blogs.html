@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Blogs</title>
+</head>
+<body onload="checkEdits()">
+<div id="lemon">
+<p>There’s nothing better than a relaxing day at a sunlit beach or laying by the pool taking sips of a tall glass of Sweet Lemon Iced Tea.</p>
+<strong>Why this recipe works:</strong>
+<p>The hot brew of the tea helps to give a robust quality.
+The fresh lemon juice gives a fresh vibrant flavor you just can’t get with store-bought.</p>
+<p>This Fresh homemade iced tea recipe is so easy to make, the only tedious part is getting all the juice out of those lemons but, please use fresh juice –  it is so worth it in the end!</p>
+<strong>Here’s how to make the iced tea:</strong> 
+<p>Boil 4 cups of water then add to a large heat-proof pitcher.
+To the hot water add the baking soda and sugar. Mix well until the sugar dissolves.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-iced-tea-recipe-steps-4.jpg" width="50%">
+<p>To the hot water add the tea bags and let steep for 10 minutes.  The longer you steep the stronger the taste.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-iced-tea-recipe-steps-6.jpg" width="50%">
+<p>Remove all of the tea bags.  Add the lemon juice.
+Top off the rest of the pitcher with cold water.  Place in the refrigerator until chilled.</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-iced-tea-recipe-steps-8.jpg" width="50%">
+<p>When ready to serve, add lemon slices and ice to the glasses then pour the tea.
+Enjoy every last sip!</p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-Iced-Tea-768x579.jpg" width="50%">
+<p>FAQs</p>
+Why is Baking Soda used in iced tea recipes?  Baking soda neutralizes the bitterness of the tea and gives it a much smoother taste.
+</div>
+<button onclick="edit()" >Edit</button>
+<button onclick="cancelEdit()">Cancel</button>
+<input type="button" value="Save" onclick="saveEdit()">
+
+<script type="text/javascript">
+
+	function edit(){
+	document.getElementById("lemon").contentEditable = "true";}
+
+   function saveEdit(){
+   	var editItem = document.getElementById("lemon");
+   	var userVersions = editItem.innerHTML;
+   	localStorage.userEdits=userVersions;
+   	
+}
+
+   function checkEdits(){
+   	if(localStorage.userEdits!=null)
+   		document.getElementById("lemon").innerHTML=localStorage.userEdits;
+   		
+}
+   function cancelEdit(){
+   	document.getElementById("lemon").contentEditable = "false";
+   }
+
+</script>
+</body>
+</html>

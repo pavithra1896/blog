@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blogs</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#Delete").click(function(){
+		$("#1").remove();
+		localStorage.setItem('remove','true');
+        });
+    var removed = localStorage.getItem('remove');
+    if (removed) {
+        $("#1").remove();
+    } else {
+        $("#1").show();
+    }
+  }); 
+</script>
+<script >
+  $(document).ready(function(){
+  $("#Deletee").click(function(){
+  	  $("#create1").remove();
+  	  localStorage.setItem('remove1','true');
+        });
+  var removed1 = localStorage.getItem('remove1');
+    if (removed1) {
+        $("#create1").remove();
+    } else {
+        $("#create1").show();
+    } });
+</script>
+<script >
+  $(document).ready(function(){
+  $("#Delete1").click(function(){
+  	  $("#cake").remove();
+  	  localStorage.setItem('remove2','true');
+        });
+  var removed2 = localStorage.getItem('remove2');
+    if (removed2) {
+        $("#cake").remove();
+    } else {
+        $("#cake").show();
+    } });
+</script>
+
+<script >
+  $(document).ready(function(){
+  $("#Delete2").click(function(){
+  	  $("#Wedges").remove();
+  	  localStorage.setItem('remove3','true');
+        });
+  var removed3 = localStorage.getItem('remove3');
+    if (removed3) {
+        $("#Wedges").remove();
+    } else {
+        $("#Wedges").show();
+    } });
+</script>
+<style type="text/css">
+button{
+	margin-left: 450px;
+    margin-right: auto;
+    display: block;
+    width: 10%;
+}
+a{
+	color: black;
+}
+	
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+  font-size: 18px
+}
+
+/* Header/Blog Title */
+h1 {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+  img{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 350px;
+		}
+
+</style>
+
+</head>
+
+<body onload="checkEdit()">
+<div class="container-fluid">
+	<button style="float: right;"> <a href="Create.html">Create</a> </button>
+<h1>FOOD BLOGS</h1>
+<div id="1" ng-app="myApp" class="row">
+	<div class="leftcolumn">
+		<div class="card">
+<p style="color: red"><a href="blogs.html"><b>Iced Lemon Tea</b></a></p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-Iced-Tea.jpg" alt="lemon-Iced-Tea" id="lemon-tea"  class="fakeimg">
+<p>This quick and easy recipe for Sweet Lemon Iced Tea will be a summer favorite – It’s so refreshing and full of fruity flavor!</p>
+<div ng-view></div></div></div></div>
+<button id="Delete">Delete</button>
+
+<div id="cake" ng-app="myApp" class="row">
+	<div class="leftcolumn">
+		<div class="card">
+<p style="color: red"><a href="cake.html"><b>BLUEBERRY CAKE</b></a></p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/05/blueberry-cake-1-e1511359193835.jpg" alt="cake" id="cake"  class="fakeimg">
+<p>The best blueberry cake EVER – it is truly delectable.The secret ingredient in the recipe is cream cheese – it makes a moist, rich and amazing cake that you’ll be craving for days after it’s gone!</p>
+<div ng-view></div></div></div></div>
+<button id="Delete1">Delete</button>
+
+<div id="Wedges" ng-app="myApp" class="row">
+	<div class="leftcolumn">
+		<div class="card">
+<p style="color: red"><a href="wedges.html"><b>Baked Potato Wedges</b></a></p>
+<img src="https://www.errenskitchen.com/wp-content/uploads/2014/05/Seasoned-Baked-Potato-Wedges-1-of-1-6.jpg"" alt="Baked Potato Wedges" id="Wedges" >
+<p>This super simple recipe for Seasoned Baked Potato Wedges turns an ordinary potato into delicious homemade wedges.</p>
+<div ng-view></div></div></div></div>
+<button id="Delete2">Delete</button>
+
+
+<div  id="create1" contenteditable="true"></div>
+
+<button id="Deletee">Delete</button>
+<input type="button" value="Save" onclick="save()">
+</div>
+<script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+    $routeProvider
+    .when("/blogs", {
+        templateUrl : "blogs.html" });
+});
+</script>
+<script>
+	function checkEdit(){
+   	if(localStorage.userEdit!=null)
+   		document.getElementById("create1").innerHTML=localStorage.userEdit;
+   }
+
+</script>
+</body>
+</html>
